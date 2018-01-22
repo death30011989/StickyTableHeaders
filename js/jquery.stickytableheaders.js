@@ -163,6 +163,7 @@
 
 					if (scrolledPastTop && notScrolledPastBottom) {
 						newLeft = offset.left - scrollLeft + base.options.leftOffset;
+						base.$originalHeader.addClass('stickied');
 						base.$originalHeader.css({
 							'position': 'fixed',
 							'margin-top': base.options.marginTop,
@@ -181,6 +182,7 @@
 						}
 						base.setPositionValues();
 					} else if (base.isSticky) {
+						base.$originalHeader.removeClass('stickied');
 						base.$originalHeader.css('position', 'static');
 						base.$clonedHeader.css('display', 'none');
 						base.isSticky = false;
